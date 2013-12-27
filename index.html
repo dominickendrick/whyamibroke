@@ -1,0 +1,41 @@
+<html>
+<head><title>Why am I broke ?</title></head>
+<body>
+<!-- Main template -->
+ <script type="text/x-handlebars" id="application">
+   <div class="main">
+     <h1>Hello World</h1>
+     {{outlet}}
+   </div>
+ </script>
+ 
+ <!-- Transactions template -->
+ <script type="text/x-handlebars" id="transactions"> 
+     <ul class="transaction-listing">
+       {{#each transaction in controller}}
+         <li>{{transaction.ammount}}</li>
+       {{else}}
+         <li>no transactions … :-(</li>
+       {{/each}}
+     </ul>
+ </script>
+ 
+ <!-- index template -->
+ <script type="text/x-handlebars" id="index"> 
+ {{#link-to "transactions"}} Go to the transactions page {{/link-to}}
+ </script>
+
+ <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+ <script src="http://builds.emberjs.com/handlebars-1.0.0.js"></script>
+ <script src="http://builds.emberjs.com/tags/v1.1.2/ember.js"></script>
+ <script src="http://builds.emberjs.com/tags/v1.0.0-beta.3/ember-data.js"></script>
+
+ <script src="app.js"></script> 
+ <script src="router.js"></script> 
+  <script src="models/transaction.js"></script> 
+ <script src="controllers/transactionsController.js"></script> 
+ <script src="routes/transactionsRoute.js"></script> 
+
+ 
+</body>
+</html>
